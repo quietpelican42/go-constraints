@@ -1,0 +1,48 @@
+{
+  "name": "go-constraints",
+  "version": "0.1.0",
+  "description": "Version constraints that behave like Go's Masterminds/semver and hashicorp/go-version, checked against both libraries.",
+  "keywords": ["semver", "version", "constraint", "helm", "terraform", "masterminds", "hashicorp", "go-version", "pessimistic"],
+  "license": "MIT",
+  "author": "__AUTHOR__",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/__GH_OWNER__/go-constraints.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./masterminds": {
+      "types": "./dist/masterminds.d.ts",
+      "default": "./dist/masterminds.js"
+    },
+    "./hashicorp": {
+      "types": "./dist/hashicorp.d.ts",
+      "default": "./dist/hashicorp.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE-masterminds-semver"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "bench": "node bench/incumbents.mjs",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run test:dist",
+    "test:dist": "node --test test/smoke.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.0"
+  }
+}
