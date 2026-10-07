@@ -4,10 +4,10 @@
   "description": "Version constraints that behave like Go's Masterminds/semver and hashicorp/go-version, checked against both libraries.",
   "keywords": ["semver", "version", "constraint", "helm", "terraform", "masterminds", "hashicorp", "go-version", "pessimistic"],
   "license": "MIT",
-  "author": "__AUTHOR__",
+  "author": "kofiadeyemiq",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/__GH_OWNER__/go-constraints.git"
+    "url": "git+https://github.com/quietpelican42/go-constraints.git"
   },
   "type": "module",
   "engines": {
